@@ -1,6 +1,3 @@
-def colored_text(r, g, b, text):
-    return f"\033[38;2;{r};{g};{b}m{text}\033[0m"
-
 print_d = [[" " for col_pattern in range(5)] for row_pattern in range(7)]
 for row in range(7):
     for col in range(5):
@@ -30,3 +27,22 @@ for row in range(7):
     for col in range(5):
         if col == 2 or ((row == 0 or row == 6) and col != 2):
             print_i[row][col] = "*"           
+
+#the actual print loop command for each characters
+for col_pattern in range(7):
+    for row_pattern in range(5):
+        printed_print_d = print_d[col_pattern][row_pattern]
+        print(print_d[col_pattern][row_pattern], end = " ")
+    print(end=" ")
+    for row_pattern in range(5):
+        printed_print_a = print_a[col_pattern][row_pattern]
+        print(print_a[col_pattern][row_pattern], end = " ")
+    print(end=" ")
+    for row_pattern in range(6):
+        printed_print_n = print_n[col_pattern][row_pattern]
+        print(print_n[col_pattern][row_pattern], end = " ")
+    print(end=" ")
+    for row_pattern in range(5):
+        printed_print_i = print_i[col_pattern][row_pattern]
+        print(print_i[col_pattern][row_pattern], end = " ")
+    print()
